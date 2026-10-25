@@ -1,9 +1,13 @@
 provider "aws" {
-  region = "your-region-code"
+  region = "us-east-1"
 }
 
 resource "aws_s3_bucket" "my_bucket" {
-  bucket = "nextwork-unique-bucket-yourname-random-number" # Make sure this bucket name is globally unique by typing a long random number
+  bucket = "nextwork-unique-bucket-senzo-0117144431" # Make sure this bucket name is globally unique by typing a long random number
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
 }
 
 resource "aws_s3_bucket_public_access_block" "my_bucket_public_access_block" {
